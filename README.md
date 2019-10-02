@@ -10,7 +10,7 @@ In this Orb-Starter-Kit you will find an automated setup to create a development
 
 ### Prerequisites
 
-Before getting started you will need the the following things:
+Before getting started you will need the following things:
 1. A CircleCI account.
 2. Git installed and configured locally.
 3. A CircleCI [Personal API Token](https://circleci.com/docs/2.0/managing-api-tokens/#creating-a-personal-api-token) (Must be Org admin to claim a namespace and publish production Orbs)
@@ -48,22 +48,22 @@ Before getting started you will need the the following things:
 > Once the script has finished you may edit the contents of the /src folder to customize your orb.
 
 5. Create your dev Orb!
-> All commits to non-master branches will automatically result in the creation of a development orb under than branch. It is recommended currently (changes incoming ) all changes be made under the automatically created Alpha branch.
+> All commits to non-master branches will automatically result in the creation of a development orb under than branch. It is recommended currently (changes incoming) all changes be made under the automatically created Alpha branch.
 
 6. Publish!
 > Merge to master and automatically publish a new production version of your Orb!
 >
-> You will need to manually publish the production version of your Orb the first time it is created. This is not needed on subsequent pushes. *NOTE* currently _all_ 'major' changes as defined by the Orbs-Tool Orb requires manual publishing. All minor and patch chages will be automatically published.
+> You will need to manually publish the production version of your Orb the first time it is created. This is not needed on subsequent pushes. *NOTE* currently _all_ 'major' changes as defined by the Orbs-Tool Orb requires manual publishing. All minor and patch changes will be automatically published.
 
 Once the orb is complete, you will have two new Green workflows in your CircleCI account. The first one for the initial setup and the second one will have produced a development version of your orb which contains a sample Command, Executor, and Job. 
 
-You may now simply modify these examples and add your own. Any new commit to the repo automatically trigger a development pipeline
+You may now simply modify these examples and add your own. Any new commit to the repo automatically triggers a development pipeline
 
 #### What happens when I push a commit?
 
 The Orb CI/CD pipeline begins! Your Orb will go through the `lint-pack_validate_publish-dev` workflow. The code will first be linted, then passed to the "pack" job which will take your multiple partial yaml files and condense them into a single Orb.yml file, lastly, if specified within the `config.yml`, and defined integration tests will also be ran.
 
-Based on the branch you push to, the workflow will automatically create a development version of your orb for any branch except for "Master" which will create a production release which will be automatically incremented.
+Based on the branch you push to; the workflow will automatically create a development version of your orb for any branch except for "Master" which will create a production release which will be automatically incremented.
 
 ### Writing your orb
 This orb provides a basic directory/file structure for a decomposed orb (where commands, jobs, examples, and executors each live in their own YAML file). Create each of your commands, jobs, examples, and executors within the requisite folders in the `src` directory.
@@ -76,7 +76,7 @@ Following are some resources to help you build and test your orb:
 
 ### Permissions
 
-Explaination of all permissions required for the script.
+Explanation of all permissions required for the script.
 
 * **sudo** - The CircleCI CLI Update command will request sudo permissions to update.
 * **GitHub personal access token** - Used to automatically create the repository for you. Will require full "repo" access.
